@@ -84,13 +84,13 @@ export default function PopularNews() {
   return (
     <>
       <Reveal>
-        <div className="w-full px-4 lg:px-0 lg:w-[75%] mx-auto flex flex-col lg:flex-row my-5">
+        <div className="w-full px-4 lg:px-0 lg:w-[75%] gap-4 lg:gap-8 mx-auto flex flex-col lg:flex-row my-5">
           {/* Left */}
           <div className="space-y-6 w-full lg:w-[70%] mt-2">
-            <div className="flex flex-col lg:flex-row">
-              <p className="w-fit font-bold">Berita Terpopuler</p>
+            <div className="flex flex-col lg:flex-row gap-1 lg:gap-4">
+              <p className="self-center font-bold text-[16px] w-full lg:w-[25%]">Berita Terpopuler</p>
               {/* Garis dengan dua warna */}
-              <div className="mt-2 ml-2 h-1 w-full lg:w-[680px] self-center" style={{ background: "linear-gradient(to right, #316d1e 100%, #e5e7eb 10%)" }}></div>
+              <div className="mt-2 h-1 w-full" style={{ background: "linear-gradient(to right,  #316d1e 100%, #e5e7eb 10%)" }}></div>
             </div>
             <div className="relative w-full overflow-hidden">
               {/* Slides Container */}
@@ -113,16 +113,17 @@ export default function PopularNews() {
 
               {/* Navigation Buttons */}
               <div className="absolute right-0 bottom-0  flex flex-col shadow-md border border-gray-300">
-                <button onClick={nextSlide} className="bg-[#316d1e] hover:bg-green-800 text-white w-10 h-10 flex items-center justify-center">
+                <button onClick={nextSlide} className="bg-[#316d1e] cursor-pointer hover:bg-green-800 text-white w-10 h-10 flex items-center justify-center">
                   <ChevronRight size={20} />
                 </button>
-                <button onClick={prevSlide} className="bg-white hover:bg-gray-100 text-black w-10 h-10 flex items-center justify-center border-t border-gray-300">
+                <button onClick={prevSlide} className="bg-white cursor-pointer hover:bg-gray-100 text-black w-10 h-10 flex items-center justify-center border-t border-gray-300">
                   <ChevronLeft size={20} />
                 </button>
               </div>
             </div>
+
             {/* Thumbnail Selector */}
-            <div className="flex items-center gap-2 mt-2 px-2 sm:px-4 overflow-x-auto">
+            <div className="flex items-center gap-2 w-full mt-2 px-4 lg:px-0  overflow-x-auto">
               {articles.map((thumb, idx) => (
                 <button key={idx} onClick={() => setCurrentIndex(idx)} className={`border-4 ${currentIndex === idx ? "border-[#316d1e]" : "border-transparent"} rounded-sm overflow-hidden`}>
                   <Image src={thumb.thumb} alt={thumb.title} width={100} height={60} className="object-cover w-[80px] h-[50px] sm:w-[100px] sm:h-[60px]" />
@@ -141,16 +142,16 @@ export default function PopularNews() {
 
           {/* Right */}
           <div className="flex flex-col gap-8 w-full lg:w-[30%]">
-            <div className="flex flex-col gap-4 mx-0 lg:mx-4">
-              <div className="flex flex-col lg:flex-row ">
-                <p className="w-fit font-bold text-[16px]">Berita Terpopuler</p>
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-col lg:flex-row gap-1 lg:gap-4">
+                <p className="self-center font-bold text-[16px] w-full">Berita Terpopuler</p>
                 {/* Garis dengan dua warna */}
-                <div className="mt-2 ml-2 h-1 w-full lg:w-[170px] self-center" style={{ background: "linear-gradient(to right, #316d1e 100%, #e5e7eb 10%)" }}></div>
+                <div className="mt-2 h-1 w-full" style={{ background: "linear-gradient(to right,  #316d1e 100%, #e5e7eb 10%)" }}></div>
               </div>
               <div className="border bg-[#fafafa] py-4 text-center">No Content Availabe</div>
             </div>
 
-            <div className="border rounded-lg w-full max-w-full lg:max-w-xs mx-auto p-4 bg-white shadow-sm">
+            <div className="border rounded-lg w-fit mx-auto p-4 bg-white shadow-sm">
               {/* Header */}
               <div className="border-b pb-2 text-sm text-gray-700 font-medium">
                 Postingan dari <span className="font-semibold">@Polri_News</span>
@@ -173,7 +174,7 @@ export default function PopularNews() {
             </div>
 
             {/* PPS */}
-            <div className="relative border rounded-lg w-full h-full lg:h-[300px] max-w-full lg:max-w-xs mx-auto bg-white p-6 shadow-sm text-center">
+            <div className="relative border rounded-lg w-full h-full lg:h-[300px] max-w-full mx-auto bg-white p-6 shadow-sm text-center">
               {/* Tombol Close */}
               <button className="absolute top-2 right-2 text-xs text-blue-500 hover:text-blue-700">✕</button>
 
@@ -184,7 +185,7 @@ export default function PopularNews() {
                 </h2>
               </div>
             </div>
-            <div className="relative border rounded-lg w-full h-full lg:h-[300px] max-w-full lg:max-w-xs mx-auto bg-white p-6 shadow-sm text-center">
+            <div className="relative border rounded-lg w-full h-[300px] lg: max-w-full mx-auto bg-white p-6 shadow-sm text-center">
               {/* Tombol Close */}
               <button className="absolute top-2 right-2 text-xs text-blue-500 hover:text-blue-700">✕</button>
 

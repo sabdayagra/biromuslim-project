@@ -26,13 +26,13 @@ const newsData = [
 export default function MuslimInfoSection() {
   return (
     <section className="py-6">
-      <div className="flex flex-col lg:flex-row mb-4">
-        <p className="w-fit font-bold">Info Muslim</p>
+      <div className="flex flex-col lg:flex-row gap-1 lg:gap-4">
+        <p className="self-center font-bold text-[16px] w-full lg:w-[20%] mb-0 lg:mb-4">Info Muslim</p>
         {/* Garis dengan dua warna */}
-        <div className="mt-2 ml-2 h-1 w-full lg:w-[723px] self-center" style={{ background: "linear-gradient(to right, #316d1e 100%, #e5e7eb 10%)" }}></div>
+        <div className="mt-2 h-1 w-full" style={{ background: "linear-gradient(to right,  #316d1e 100%, #e5e7eb 10%)" }}></div>
       </div>
       <div className="flex flex-col lg:flex-row gap-4">
-        {/* LEFT CONTENT - Fixed Width */}
+        {/* LEFT CONTENT */}
         <div className="w-full lg:w-[450px] shrink-0">
           <div className="relative">
             <img src={newsData[0].image} alt={newsData[0].title} className="w-full h-[224px] lg:h-[524px] object-cover rounded" />
@@ -54,12 +54,12 @@ export default function MuslimInfoSection() {
           </div>
         </div>
 
-        {/* RIGHT CONTENT - Fill Remaining */}
+        {/* RIGHT CONTENT */}
         <div className="flex flex-col gap-4 flex-1 w-full">
           {newsData.slice(1).map((item, idx) => (
             <div key={idx} className="flex flex-col gap-2 w-full">
               <div className="relative w-full">
-                <img src={item.image} alt={item.title} className="w-full h-44 object-cover rounded" />
+                <Image width={1920} height={1080} src={item.image} alt={item.title} className="w-full h-[150px] lg:h-[258px] object-cover rounded" />
                 <span className="absolute bottom-4 left-2 bg-green-700 text-black text-xs px-2 py-0.5 rounded">{item.category}</span>
               </div>
               <div className="flex flex-col justify-between w-full">
