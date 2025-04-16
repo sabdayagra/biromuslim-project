@@ -138,6 +138,8 @@ export default function PopularNews() {
             <ColoumnPPS />
 
             <MuslimInfoBottom />
+
+            <ColoumnPPS />
           </div>
 
           {/* Right */}
